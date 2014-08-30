@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from sahara.service.edp import hdfs_helper
 from sahara.service.edp.oozie import engine as edp_engine
 
 
@@ -20,3 +21,6 @@ class EdpOozieEngine(edp_engine.OozieJobEngine):
 
     def get_hdfs_user(self):
         return 'hdfs'
+
+    def create_hdfs_dir(self, remote, dir_name):
+        hdfs_helper.create_dir_hadoop2(remote, dir_name, self.get_hdfs_user())
