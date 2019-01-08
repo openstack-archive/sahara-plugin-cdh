@@ -50,7 +50,7 @@ For cluster provisioning, prepared images should be used.
      -
 
 For more information about building image, refer to
-:doc:`building-guest-images`.
+:sahara-doc:`Sahara documentation <user/building-guest-images.html>`.
 
 The cloudera plugin requires an image to be tagged in Sahara Image Registry
 with two tags: 'cdh' and '<cloudera version>' (e.g. '5.13.0', '5.11.0',
@@ -58,7 +58,7 @@ with two tags: 'cdh' and '<cloudera version>' (e.g. '5.13.0', '5.11.0',
 
 The default username specified for these images is different for each
 distribution. For more information, refer to the
-:doc:`registering-image` section.
+:sahara-doc:`registering image <user/registering-image.html>` section.
 
 Build settings
 ~~~~~~~~~~~~~~
@@ -93,7 +93,8 @@ High Availability Support
 -------------------------
 
 Currently HDFS NameNode High Availability is supported beginning with
-Cloudera 5.4.0 version.  You can refer to :doc:`features` for the detail
+Cloudera 5.4.0 version.  You can refer to
+:sahara-doc:`Features Overview <user/features.html>` for the detail
 info.
 
 YARN ResourceManager High Availability is supported beginning with Cloudera
