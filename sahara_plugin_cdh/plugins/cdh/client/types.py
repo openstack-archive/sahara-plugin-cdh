@@ -142,7 +142,7 @@ def call(method, path, ret_type,
     :param params: Optional query parameters for the call.
     :param api_version: minimum API version for the call.
     """
-    check_api_version(method.im_self, api_version)
+    check_api_version(method.__self__, api_version)
     if data is not None:
         data = json.dumps(Attr(is_api_list=True).to_json(data, False))
         ret = method(path, data=data, params=params)
@@ -151,11 +151,11 @@ def call(method, path, ret_type,
     if ret_type is None:
         return
     elif ret_is_list:
-        return ApiList.from_json_dict(ret, method.im_self, ret_type)
+        return ApiList.from_json_dict(ret, method.__self__, ret_type)
     elif isinstance(ret, list):
-        return [ret_type.from_json_dict(x, method.im_self) for x in ret]
+        return [ret_type.from_json_dict(x, method.__self__) for x in ret]
     else:
-        return ret_type.from_json_dict(ret, method.im_self)
+        return ret_type.from_json_dict(ret, method.__self__)
 
 
 class BaseApiObject(object):
