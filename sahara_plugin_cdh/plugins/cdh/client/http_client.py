@@ -110,7 +110,12 @@ class HttpClient(object):
                                                  path=path))
                 data = None
 
+        if http_method in ("POST", "PUT"):
+            if data is not None:
+                data = data.encode('utf-8')
+
         # Setup the request
+
         request = urllib.request.Request(url, data)
         # Hack/workaround because urllib2 only does GET and POST
         request.get_method = lambda: http_method
