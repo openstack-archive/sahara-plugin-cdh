@@ -72,7 +72,6 @@ pygments_style = 'sphinx'
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 
-
 # -- Options for HTML output ---------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -111,10 +110,6 @@ html_theme = 'openstackdocs'
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
 #html_last_updated_fmt = '%b %d, %Y'
-
-# If true, SmartyPants will be used to convert quotes and dashes to
-# typographically correct entities.
-html_use_smartypants = False
 
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
@@ -158,7 +153,7 @@ htmlhelp_basename = 'saharacdhplugin-testsdoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'sahara-plugin-cdh.tex', u'sahara-plugin-cdh Documentation',
+  ('index', 'doc-sahara-plugin-cdh.tex', u'Sahara CDH Plugin Documentation',
    u'Sahara team', 'manual'),
 ]
 
@@ -182,6 +177,7 @@ latex_documents = [
 # If false, no module index is generated.
 #latex_domain_indices = True
 
+smartquotes_excludes = {'builders': ['latex']}
 
 # -- Options for manual page output --------------------------------------------
 
