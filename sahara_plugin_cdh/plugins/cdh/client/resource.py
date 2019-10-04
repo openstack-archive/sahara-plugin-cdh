@@ -85,8 +85,9 @@ class Resource(object):
         LOG.debug("{method} got response: {body}".format(method=method,
                                                          body=body[:32]))
         # Is the response application/json?
-        if (len(body) != 0 and resp.info().getmaintype() == "application"
-                and resp.info().getsubtype() == "json"):
+        if (len(body) != 0 and
+            self._get_content_maintype(resp.info()) == "application"
+                and self._get_content_subtype(resp.info()) == "json"):
             try:
                 json_dict = json.loads(body)
                 return json_dict
@@ -144,6 +145,7 @@ class Resource(object):
 
         :return: A dictionary of the JSON result.
         """
+
         return self.invoke("POST", relpath, params, data,
                            self._make_headers(contenttype))
 
@@ -164,3 +166,15 @@ class Resource(object):
         if contenttype:
             return {'Content-Type': contenttype}
         return None
+
+    def _get_content_maintype(self, info):
+        try:
+            return info.getmaintype()
+        except AttributeError:
+            return info.get_content_maintype()
+
+    def _get_content_subtype(self, info):
+        try:
+            return info.getsubtype()
+        except AttributeError:
+            return info.get_content_subtype()

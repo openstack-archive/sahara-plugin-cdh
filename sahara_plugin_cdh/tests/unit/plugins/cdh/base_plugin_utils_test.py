@@ -177,7 +177,7 @@ class TestPluginUtils(b.SaharaTestCase):
             'plugins/cdh/db_resources/create_hive_db.sql'
                                 .format(version=self.version),
             'sahara_plugin_cdh')
-        create_db_script = create_db_script % db_password
+        create_db_script = (create_db_script % db_password).encode('utf-8')
 
         self.plug_utils.configure_hive(cluster)
 
@@ -311,7 +311,7 @@ class TestPluginUtilsHigherThanV5(TestPluginUtils):
             'plugins/cdh/db_resources/create_sentry_db.sql'
                                 .format(version=self.version),
             'sahara_plugin_cdh')
-        create_db_script = create_db_script % db_password
+        create_db_script = (create_db_script % db_password).encode('utf-8')
 
         self.plug_utils.configure_sentry(cluster)
 
