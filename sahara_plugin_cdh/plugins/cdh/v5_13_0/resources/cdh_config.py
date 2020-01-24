@@ -63,6 +63,7 @@ def write_cfg(cfg, file_name):
     with open(file_name, 'w') as f:
         f.write(to_write)
 
+
 if __name__ == '__main__':
     for service in services:
         process_service(service)
