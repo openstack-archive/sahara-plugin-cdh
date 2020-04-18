@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import mock
+from unittest import mock
 
 from sahara_plugin_cdh.plugins.cdh.v5_7_0 import deploy
 from sahara_plugin_cdh.tests.unit import base
