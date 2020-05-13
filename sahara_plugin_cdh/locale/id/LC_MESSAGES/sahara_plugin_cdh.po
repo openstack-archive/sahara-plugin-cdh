@@ -1,0 +1,233 @@
+# suhartono <cloudsuhartono@gmail.com>, 2020. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: sahara-plugin-cdh VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2020-04-24 23:42+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-05-12 09:01+0000\n"
+"Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
+"Language-Team: Indonesian\n"
+"Language: id\n"
+"X-Generator: Zanata 4.3.3\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#, python-format
+msgid "%(problem)s, reason: %(reason)s"
+msgstr "%(problem)s, reason: %(reason)s"
+
+#, python-format
+msgid "%(problem)s. %(description)s"
+msgstr "%(problem)s. %(description)s"
+
+msgid "'cluster' or 'instance' argument missed"
+msgstr "Argumen 'cluster' atau 'instance' tidak terjawab"
+
+msgid "0 or 1"
+msgstr "0 atau 1"
+
+#, python-format
+msgid "API version %(minv)s is required but %(acv)s is in use."
+msgstr "Versi API  %(minv)s diperlukan tetapi %(acv)s sedang digunakan."
+
+#, python-format
+msgid "Attribute %(attname)s of class %(classname)s is read only."
+msgstr "Atribut %(attname)s dari kelas %(classname)s  hanya baca."
+
+msgid "Await Cloudera agents"
+msgstr "Tunggu agen Cloudera"
+
+msgid "Await agents"
+msgstr "Menunggu agen"
+
+msgid "Await starting Cloudera Manager"
+msgstr "Tunggu mulai Cloudera Manager"
+
+#, python-format
+msgid "CDH %s health check"
+msgstr "CDH %s cek kesehatan"
+
+msgid ""
+"CDH plugin cannot scale node group with processes which have no master-"
+"processes run in cluster"
+msgstr ""
+"Plugin CDH tidak dapat menskala node group dengan proses yang tidak memiliki "
+"proses master berjalan di cluster"
+
+#, python-format
+msgid "CDH plugin cannot scale nodegroup with processes: %(processes)s"
+msgstr "Plugin CDH tidak dapat menskala nodegroup dengan proses: %(processes)s"
+
+#, python-format
+msgid "CM API attribute error: %s"
+msgstr "CM API attribute error: %s"
+
+#, python-format
+msgid "CM API error: %s"
+msgstr "CM API error: %s"
+
+#, python-format
+msgid "CM API value error: %s"
+msgstr "CM API value error: %s"
+
+#, python-format
+msgid "CM API version not meet requirement: %s"
+msgstr "Versi CM API tidak memenuhi persyaratan: %s"
+
+msgid "Can't get response from Cloudera Manager"
+msgstr "Tidak bisa mendapatkan respons dari Cloudera Manager"
+
+#, python-format
+msgid ""
+"Class %(class1)s does not derive from %(class2)s; cannot update attributes."
+msgstr ""
+"Kelas %(class1)s tidak berasal dari %(class2)s; tidak dapat memperbarui "
+"atribut."
+
+#, python-format
+msgid "Cloudera Manager has responded that service is in the %s state"
+msgstr "Cloudera Manager telah merespons bahwa layanan dalam %s state"
+
+msgid "Cloudera Manager health check"
+msgstr "Pemeriksaan kesehatan Cloudera Manager"
+
+msgid "Cloudera Manager is Active"
+msgstr "Cloudera Manager aktif"
+
+msgid "Cloudera {base} or higher required to run {type}jobs"
+msgstr ""
+"Cloudera {base} atau lebih tinggi diperlukan untuk menjalankan {type}jobs"
+
+#, python-format
+msgid "Command %(method)s %(path)s failed: %(msg)s"
+msgstr "Command %(method)s %(path)s failed: %(msg)s"
+
+msgid "Configure OS"
+msgstr "Konfigurasikan OS"
+
+msgid "Configure Swift"
+msgstr "Konfigurasikan Swift"
+
+msgid "Configure instances"
+msgstr "Konfigurasikan instances"
+
+msgid "Configure rack awareness"
+msgstr "Konfigurasikan rack awareness"
+
+msgid "Configure services"
+msgstr "Konfigurasikan layanan"
+
+msgid "Create mgmt service"
+msgstr "Create mgmt service"
+
+msgid "Create services"
+msgstr "Buat layanan"
+
+msgid "Decommission nodes"
+msgstr "Decommission nodes"
+
+msgid "Delete instances"
+msgstr "Delete instances"
+
+msgid "Deploy configs"
+msgstr "Deploy configs"
+
+msgid "Either 'version' or 'fullVersion' must be specified"
+msgstr "'Versi' atau 'fullVersion' harus ditentukan"
+
+msgid "Enable NameNode HA"
+msgstr "Enable NameNode HA"
+
+msgid "Enable ResourceManager HA"
+msgstr "Enable ResourceManager HA"
+
+msgid "Finish cluster starting"
+msgstr "Selesai mulai cluster"
+
+msgid "First run cluster"
+msgstr "Run pertama cluster"
+
+msgid "Get retry max time reached."
+msgstr "Coba lagi waktu max tercapai."
+
+msgid "HDFS_NAMENODE should be enabled in anti_affinity."
+msgstr "HDFS_NAMENODE harus diaktifkan di anti_affinity."
+
+msgid "HDFS_SECONDARYNAMENODE should be enabled in anti_affinity."
+msgstr "HDFS_SECONDARYNAMENODE harus diaktifkan di anti_affinity."
+
+msgid "IMPALAD must be installed on every HDFS_DATANODE"
+msgstr "IMPALAD harus diinstal pada setiap HDFS_DATANODE"
+
+msgid "Install packages"
+msgstr "Instal paket"
+
+#, python-format
+msgid "Invalid property %(attname)s for class %(classname)s."
+msgstr "Properti %(attname)s  tidak valid untuk kelas %(classname)s."
+
+msgid "Number of datanodes must be not less than dfs_replication."
+msgstr "Jumlah datanodes harus tidak kurang dari dfs_replication."
+
+msgid "OS on image is not supported by CDH plugin"
+msgstr "OS pada image tidak didukung oleh plugin CDH"
+
+msgid "Prepare cluster"
+msgstr "Siapkan kluster"
+
+#, python-format
+msgid "Process %(process)s is not supported by CDH plugin"
+msgstr "Process %(process)s tidak didukung oleh plugin CDH"
+
+msgid "Refresh DataNodes"
+msgstr "Refresh DataNodes"
+
+msgid "Refresh YARNNodes"
+msgstr "Refresh YARNNodes"
+
+msgid "Restart stale services"
+msgstr "Restart stale services"
+
+msgid "Start Cloudera Agents"
+msgstr "Mulai Agen Cloudera"
+
+msgid "Start Cloudera Manager"
+msgstr "Mulai Cloudera Manager"
+
+msgid "Start roles: NODEMANAGER, DATANODE"
+msgstr "Mulai roles: NODEMANAGER, DATANODE"
+
+msgid ""
+"The Cloudera Sahara plugin provides the ability to launch the Cloudera "
+"distribution of Apache Hadoop (CDH) with Cloudera Manager management console."
+msgstr ""
+"Plugin Cloudera Sahara menyediakan kemampuan untuk meluncurkan distribusi "
+"Cloudera dari Apache Hadoop (CDH) dengan konsol manajemen Cloudera Manager."
+
+#, python-format
+msgid "The following checks did not pass: %s"
+msgstr "Cek berikut tidak lulus: %s"
+
+msgid "Unable to find config: applicable_target: {target}, name: {name}"
+msgstr ""
+"Tidak dapat menemukan konfigurasi: applicable_target: {target}, name: {name}"
+
+msgid "Update configs"
+msgstr "Update configs"
+
+msgid "YARN_RESOURCEMANAGER should be enabled in anti_affinity."
+msgstr "YARN_RESOURCEMANAGER harus diaktifkan di anti_affinity."
+
+msgid "YARN_STANDBYRM should be enabled in anti_affinity."
+msgstr "YARN_STANDBYRM harus diaktifkan di anti_affinity."
+
+msgid "at least 1"
+msgstr "setidaknya 1"
+
+msgid "be odd"
+msgstr "be odd"
+
+msgid "not less than 3"
+msgstr "tidak kurang dari 3"
