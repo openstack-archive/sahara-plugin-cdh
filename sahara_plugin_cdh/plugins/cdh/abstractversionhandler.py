@@ -15,8 +15,6 @@
 
 import abc
 
-import six
-
 from sahara.plugins import conductor
 from sahara.plugins import context
 from sahara.plugins import kerberos
@@ -24,8 +22,7 @@ from sahara_plugin_cdh.plugins.cdh import db_helper as dh
 from sahara_plugin_cdh.plugins.cdh import health
 
 
-@six.add_metaclass(abc.ABCMeta)
-class AbstractVersionHandler(object):
+class AbstractVersionHandler(object, metaclass=abc.ABCMeta):
 
     @abc.abstractmethod
     def get_node_processes(self):

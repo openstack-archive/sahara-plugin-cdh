@@ -15,8 +15,6 @@
 
 from unittest import mock
 
-import six
-
 from sahara.plugins import base as pb
 from sahara_plugin_cdh.plugins.cdh.v5_7_0 import edp_engine
 from sahara_plugin_cdh.plugins.cdh.v5_7_0 import versionhandler
@@ -37,7 +35,7 @@ class VersionHandlerTestCase(base.SaharaTestCase):
 
     def test_get_node_processes(self):
         processes = self.vh.get_node_processes()
-        for k, v in six.iteritems(processes):
+        for k, v in processes.items():
             for p in v:
                 self.assertIsInstance(p, str)
 

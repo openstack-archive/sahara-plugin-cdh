@@ -15,8 +15,6 @@
 
 import itertools
 
-import six
-
 from sahara.plugins import exceptions as ex
 from sahara.plugins import testutils as tu
 from sahara_plugin_cdh.tests.unit import base
@@ -35,7 +33,7 @@ def make_ng_dict_with_inst(counter, name, flavor, processes, count,
     if not instances:
         instances = []
         for i in range(count):
-            n = six.next(counter)
+            n = next(counter)
             instance = tu.make_inst_dict("id{0}".format(n),
                                          "fake_inst{0}".format(n),
                                          management_ip='1.2.3.{0}'.format(n))
@@ -87,9 +85,9 @@ def get_fake_cluster_with_process(processes=None,
                 wkrs_ng[2].remove(process)
 
     other_ng_list = []
-    for process, count in six.iteritems(processes):
+    for process, count in processes.items():
         if count:
-            ng = ('service_ng{0}'.format(six.next(ng_counter)),
+            ng = ('service_ng{0}'.format(next(ng_counter)),
                   1, [process], count)
             other_ng_list.append(ng)
 
@@ -97,7 +95,7 @@ def get_fake_cluster_with_process(processes=None,
 
     ng_dict_list = [make_ng_dict_with_inst(
         inst_counter, *args,
-        id="ng_id{0}".format(six.next(ng_id_counter)))
+        id="ng_id{0}".format(next(ng_id_counter)))
         for args in ng_list]
 
     return tu.create_cluster('test_cluster', 1, 'cdh',

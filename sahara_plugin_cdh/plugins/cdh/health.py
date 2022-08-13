@@ -16,7 +16,6 @@
 import functools
 
 from oslo_log import log as logging
-import six
 
 from sahara.plugins import health_check_base
 from sahara_plugin_cdh.i18n import _
@@ -70,7 +69,7 @@ class HealthStatusProvider(object):
             LOG.exception(msg)
             self._exception_store = _(
                 "%(problem)s, reason: %(reason)s") % {
-                'problem': msg, 'reason': six.text_type(e)}
+                'problem': msg, 'reason': str(e)}
 
 
 class ClouderaManagerHealthCheck(health_check_base.BasicHealthCheck):

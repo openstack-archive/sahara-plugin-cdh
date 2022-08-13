@@ -27,8 +27,7 @@ import socket
 
 from oslo_log import log as logging
 from oslo_serialization import jsonutils as json
-import six
-from six.moves import urllib
+import urllib
 
 from sahara.plugins import context
 from sahara_plugin_cdh.i18n import _
@@ -80,7 +79,7 @@ class Resource(object):
         except Exception as ex:
             raise ex.CMApiException(
                 _("Command %(method)s %(path)s failed: %(msg)s")
-                % {'method': method, 'path': path, 'msg': six.text_type(ex)})
+                % {'method': method, 'path': path, 'msg': str(ex)})
 
         LOG.debug("{method} got response: {body}".format(method=method,
                                                          body=body[:32]))
@@ -105,13 +104,13 @@ class Resource(object):
 
         :return: A dictionary of the JSON result.
         """
-        for retry in six.moves.xrange(self.retries + 1):
+        for retry in range(self.retries + 1):
             if retry:
                 context.sleep(self.retry_sleep)
             try:
                 return self.invoke("GET", relpath, params)
             except (socket.error, urllib.error.URLError) as e:
-                if "timed out" in six.text_type(e).lower():
+                if "timed out" in str(e).lower():
                     if retry < self.retries:
                         LOG.warning("Timeout issuing GET request for "
                                     "{path}. Will retry".format(

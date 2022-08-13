@@ -15,7 +15,6 @@
 
 from unittest import mock
 
-import six
 import testtools
 
 from sahara.plugins import health_check_base as base_health
@@ -49,7 +48,7 @@ class TestHealthCheck(unit_base.SaharaTestCase):
                 msg = "%s%s" % (msg, postfix)
                 all_message = "Cluster health is %(col)s. Reason: %(msg)s" % {
                     'col': col, 'msg': msg}
-                self.assertEqual(all_message, six.text_type(e))
+                self.assertEqual(all_message, str(e))
                 raise
 
     @mock.patch('sahara_plugin_cdh.plugins.cdh.health.HealthStatusProvider.'

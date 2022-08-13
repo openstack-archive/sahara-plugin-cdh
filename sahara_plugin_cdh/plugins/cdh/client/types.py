@@ -28,7 +28,6 @@ import time
 
 from oslo_serialization import jsonutils as json
 from oslo_utils import reflection
-import six
 
 from sahara.plugins import context
 from sahara_plugin_cdh.i18n import _
@@ -204,7 +203,7 @@ class BaseApiObject(object):
         # We use unicode strings as keys in kwargs.
         str_attrs = {}
         if attrs:
-            for k, v in six.iteritems(attrs):
+            for k, v in attrs.items():
                 if k not in ('self', 'resource_root'):
                     str_attrs[k] = v
         BaseApiObject.__init__(obj, resource_root, **str_attrs)
@@ -222,7 +221,7 @@ class BaseApiObject(object):
         """
         self._resource_root = resource_root
 
-        for name, attr in six.iteritems(self._get_attributes()):
+        for name, attr in self._get_attributes().items():
             object.__setattr__(self, name, None)
         if attrs:
             self._set_attrs(attrs, from_json=False)
@@ -234,7 +233,7 @@ class BaseApiObject(object):
         read-only attributes (e.g. when deserializing from JSON) and skipping
         JSON deserialization of values.
         """
-        for k, v in six.iteritems(attrs):
+        for k, v in attrs.items():
             attr = self._check_attr(k, allow_ro)
             if attr and from_json:
                 v = attr.from_json(self._get_resource_root(), v)
@@ -279,7 +278,7 @@ class BaseApiObject(object):
 
     def to_json_dict(self, preserve_ro=False):
         dic = {}
-        for name, attr in six.iteritems(self._get_attributes()):
+        for name, attr in self._get_attributes().items():
             if not preserve_ro and attr and not attr.rw:
                 continue
             try:
@@ -647,7 +646,7 @@ def config_to_api_list(dic):
     :return: JSON dictionary of an ApiConfig list (*not* an ApiList).
     """
     config = []
-    for k, v in six.iteritems(dic):
+    for k, v in dic.items():
         config.append({'name': k, 'value': v})
     return {ApiList.LIST_KEY: config}
 

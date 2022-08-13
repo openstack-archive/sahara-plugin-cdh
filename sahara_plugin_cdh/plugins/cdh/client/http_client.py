@@ -22,12 +22,12 @@
 # To satisfy the pep8 and python3 tests, we did some changes to the codes.
 # We also change some importings to use Sahara inherited classes.
 
+import http.cookiejar
 import posixpath
+import urllib
 
 from oslo_log import log as logging
 from oslo_serialization import jsonutils as json
-import six
-from six.moves import urllib
 
 from sahara_plugin_cdh.plugins.cdh import exceptions as ex
 
@@ -53,7 +53,7 @@ class HttpClient(object):
         authhandler = urllib.request.HTTPBasicAuthHandler(self._passmgr)
 
         # Make a cookie processor
-        cookiejar = six.moves.http_cookiejar.CookieJar()
+        cookiejar = http.cookiejar.CookieJar()
 
         self._opener = urllib.request.build_opener(
             urllib.request.HTTPErrorProcessor(),
@@ -130,7 +130,7 @@ class HttpClient(object):
         try:
             return self._opener.open(request)
         except urllib.error.HTTPError as ex:
-            message = six.text_type(ex)
+            message = str(ex)
             try:
                 json_body = json.loads(message)
                 message = json_body['message']

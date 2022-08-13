@@ -23,7 +23,6 @@
 # We also change some importings to use Sahara inherited classes.
 
 from oslo_serialization import jsonutils as json
-import six
 
 from sahara_plugin_cdh.plugins.cdh.client import role_config_groups
 from sahara_plugin_cdh.plugins.cdh.client import roles
@@ -193,7 +192,7 @@ class ApiService(types.BaseApiResource):
             data = {}
         if rt_configs:
             rt_list = []
-            for rt, cfg in six.iteritems(rt_configs):
+            for rt, cfg in rt_configs.items():
                 rt_data = types.config_to_api_list(cfg)
                 rt_data['roleType'] = rt
                 rt_list.append(rt_data)

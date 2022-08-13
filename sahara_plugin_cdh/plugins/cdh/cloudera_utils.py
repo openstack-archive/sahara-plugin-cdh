@@ -15,7 +15,6 @@
 
 import functools
 
-import six
 
 from sahara.plugins import context
 from sahara.plugins import exceptions as ex
@@ -474,7 +473,7 @@ class ClouderaUtils(object):
             'HDFS_GATEWAY': ['HDFS_NAMENODE', 'HDFS_DATANODE',
                              "HDFS_SECONDARYNAMENODE"]
         }
-        for extra_role in six.iterkeys(extra_roles):
+        for extra_role in extra_roles.keys():
             valid_processes = extra_roles[extra_role]
             for valid in valid_processes:
                 if valid in current:

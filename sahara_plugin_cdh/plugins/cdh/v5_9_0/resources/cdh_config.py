@@ -14,7 +14,6 @@
 # limitations under the License.
 
 from oslo_serialization import jsonutils as json
-import six
 
 from sahara_plugin_cdh.plugins.cdh.client import api_client
 
@@ -65,7 +64,7 @@ def process_service(service, service_name):
 
 def parse_config(config):
     cfg = []
-    for name, value in six.iteritems(config):
+    for name, value in config.items():
         p = {
             'name': value.name,
             'value': value.default,
